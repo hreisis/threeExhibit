@@ -1,0 +1,91 @@
+/* a minimalist set of CSS resets */
+
+/* default to border-box */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  /* adjust typography defaults */
+  body {
+    color: black;
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.5;
+    overflow: hidden;
+  }
+  
+  /* images and videos max out at full width */
+  img,
+  video {
+    height: auto;
+    max-width: 100%;
+  }
+  
+  canvas{
+    width: 100vw;
+    height: 100vh;
+    background: grey;
+    filter: contrast(1.2)
+  }
+  
+  .container {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    z-index: 1;
+    }
+    .card {
+      position: relative;
+      margin: auto;
+      width: 100vw;
+      height: 100vh;
+      
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-sizing: border-box;
+      backdrop-filter: blur(74px);
+      -webkit-backdrop-filter: blur(74px);
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;  
+  
+      color: black;
+  
+      font-size: 15px;
+      font-weight: normal;
+      text-align: center;
+    }
+  
+  #aboutCard {
+    display: none;
+  }
+  
+    #button {
+      margin: 50px 0;
+      width: 200px;
+      height: 70px;
+      background: #fadbff;
+      color: white;
+      cursor: pointer;
+      border: 2px solid white;
+      border-radius: 15px;
+      box-shadow: 2px 2px 0 ehite;
+  
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #button:hover {
+      background: #f4b3ff;
+    }
