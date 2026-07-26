@@ -52,18 +52,6 @@ renderer.outputEncoding = THREE.sRGBEncoding; //setting up the encoding
 renderer.toneMapping = THREE.NoToneMapping; //setting up the toneMapping
 
 
-// const bgloader = new THREE.CubeTextureLoader();
-// let map = bgloader.load([
-//         "https://cdn.glitch.com/fdafc1e7-4911-4e84-9698-d11db5fd214a%2Fdesert2_px.jpg?v=1629787989861",
-//         "https://cdn.glitch.com/fdafc1e7-4911-4e84-9698-d11db5fd214a%2Fdesert2_nx.jpg?v=1629787990014",
-//         "https://cdn.glitch.com/fdafc1e7-4911-4e84-9698-d11db5fd214a%2Fdesert2_py.jpg?v=1629787989475",
-//         "https://cdn.glitch.com/fdafc1e7-4911-4e84-9698-d11db5fd214a%2Fdesert2_ny.jpg?v=1629787990307",
-//         "https://cdn.glitch.com/fdafc1e7-4911-4e84-9698-d11db5fd214a%2Fdesert2_pz.jpg?v=1629787989987",
-//         "https://cdn.glitch.com/fdafc1e7-4911-4e84-9698-d11db5fd214a%2Fdesert2_nz.jpg?v=1629787989953"
-//       ]);
-
-     // scene.environment = map;
-
 
 //setup first person view controls
 controls = new PointerLockControls(camera, document.body);
@@ -489,7 +477,7 @@ function move(delta) {
     );
   }
 
-let delta; //a variable to use for smooth animation
+//let delta; //a variable to use for smooth animation
 let time = Date.now(); //get current time
 
 
@@ -501,7 +489,9 @@ function animate() {
   //request animation
   requestAnimationFrame(animate);
   
-  mixer.update()
+  if (mixer) {
+    mixer.update(delta / 1000);
+  }
 
   //if we are in a game mode - move the player and move the particles
   if(playState){  
